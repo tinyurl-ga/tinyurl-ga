@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+        <title>tiny url</title>
+        <link rel="stylesheet" href="/css/style.css">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10/brython.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/brython@3.10/brython_stdlib.js"></script>
+    </head>
+    <body onload="brython()">
+        <div id="nav">
+            <h1 id="nav_title"><a href="/">tiny url</a></h1>
+            <ul id="nav_menu">
+                <li class="nav_menu_content"><a href="/create">create</a></li>
+                <li class="nav_menu_content"><a href="https://github.com/tinyurl-ga/document">document</a></li>
+            </ul>
+        </div>
+        <main>
+            {% block main %}
+            {% endblock %}
+        </main>
+    </body>
+</html>

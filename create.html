@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block main %}
+<h2>短縮URL作成</h2>
+<input type="text" id="create_input"></input>
+<button type="button" id="create_button">作成</button>
+<div>
+    <p id="create_result">結果:</p>
+</div>
+<script type="text/python" src="/python/create.py"></script>
+{% endblock %}
