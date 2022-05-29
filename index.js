@@ -26,19 +26,14 @@ app.get("/create", async function (req, res) {
 });
 
 app.post("/api", async function (req, res) {
-    let result = await surl.get(req.body.url)
-    if (result === undefined) {
-        console.log(result);
-        let name = crypto.randomBytes(5).toString('base64');
-        await surl.set(name, req.body.url);
-        res.json({"url": `https://tinyurl.ga/${name}`});
-    } else {
-        res.json({"url": `https://tinyurl.ga/${result}`});
-    }
+    let name = crypto.randomBytes(5).toString('hex');
+    await surl.set(name, req.body.url);
+    res.json({"url": `https://tinyurl.ga/${name}`});
 });
 
 app.get("/:id", async function (req, res) {
     let url = await surl.get(req.params.id);
+    console.log(url);
     if (url === undefined) {
         res.redirect("https://youtu.be/WqoMkpQWPQw");
     } else {
